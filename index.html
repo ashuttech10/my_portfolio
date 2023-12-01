@@ -5,136 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASHUTOSH JAISWAL - PORTFOLIO</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: rgb(136, 218, 218);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 80px;
-            background-color: blue;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            list-style: none;
-            margin: 0 45px;
-        }
-        nav ul li a{
-            text-decoration:none ;
-            color: white;
-        }
-        nav ul li a:hover{
-            color: blueviolet;
-            font-size: 1.1rem;
-        }
-        main hr{
-            border : 0;
-            background: #0f0e23;
-            height: 1.2px;
-            margin: 40px 84px;
-
-        }
-
-        .left {
-            font-size: 2rem;
-        }
-
-        .fistSection {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 140px 0;
-        }
-
-        .fistSection>div {
-            width: 30%;
-        }
-
-        .leftSection {
-            font-size: 3rem;
-        }
-
-        .rightSection img {
-            width: 80%;
-        }
-
-        .pup {
-            color: brown;
-        }
-        #element{
-            color: blue;
-        }
-        .secondSection{
-            margin: auto;
-            max-width: 80vw;
-
-        }
-    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
+    <title>Portfolio</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="left">ASHUTOSH PORTFOLIO</div>
-            <div class="righ">
+
+
+    <section>
+        <header class="container">
+            <div class="page-header">
+                
+                <input type="checkbox" id="click">
+    
+                <label for="click" class="mainicon">
+                    <div class="menu">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                </label>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Service</a></li>
-                    <li><a href="/">Projects</a></li>
-                    <li><a href="/">Contact Me</a></li>
+                    <li><a href="#"  class="active" style="--navAni:1">Home</a></li>
+                    <li><a href="#" style="--navAni:2">About</a></li>
+                    <li><a href="#" style="--navAni:3">Skills</a></li>
+                    <li><a href="#" style="--navAni:4">Portfolio</a></li>
+                    <li><a href="#" style="--navAni:5">Contact</a></li>
                 </ul>
+                <label class="mode">
+                    <input type="checkbox" id="darkModeToggle">
+                    <i class='bx bxs-moon'></i>
+                </label>
             </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="fistSection">
-            <div class="leftSection">
-                Hi I am <span class="pup">ASHUTOSH</span>
-                <div>and you are visting my PORTFOLIO.</div>
-                <div>I am a pasinate</div>
-                <span id="element"></span>                    
+        </header>
+    
+        <div class="container">
+            <div class="main">
+                <div class="detail">
+                    <h3>Hi, I'm</h3>
+                    <h1><span style="color:#18114d;">Ashutosh</span> Jaiswal</h1> 
+                    <p>I am a developing software engineer which is ready to learn new technology to meet industries needs.
+                    </p>  
+                    <div class="social">
+                        <a href="https://www.linkedin.com/in/ashutosh-jaiswal-485857213" style="--socialAni:1"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://instagram.com/ashu___rocks?utm_source=qr&igshid=ZTM4ZDRiNzUwMw%3D%3D" style="--socialAni:2"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://github.com/ashuttech10" style="--socialAni:3"><i class='bx bxl-github'></i></a>
+                        <!--<a href="https://www.youtube.com/@Web_Devs__" style="--socialAni:4"><i class='bx bxl-email'></i></a>-->
+                    </div>
+                </div>
+                <div class="images">
+                    <img src="ashu full photo.jpg" alt="" class="img-w">
+                </div>
             </div>
-            <div class="rightSection">
-                <img src="Ashutosh cv photo.png">
-            </div>
-        </section>
-<hr>
-        <section class="secondSection">
-            <h1>Past Experience</h1>
+        </div>
+    </section>
 
-
-        </section>
-
-    </main>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <!-- Setup and start animation! -->
-  <script>
-    var typed = new Typed('#element', {
-      strings: ['web developer', 'graphic designer'],
-      typeSpeed: 50,
-    });
-  </script>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
 </body>
 
 </html>
